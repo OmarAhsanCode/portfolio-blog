@@ -1,0 +1,90 @@
+---
+title: "Modern CSS Techniques for 2024"
+excerpt: "Explore the latest CSS features and how to use them in your projects."
+date: "2024-01-10"
+author: "Your Name"
+tags: ["CSS", "Web Design", "Frontend"]
+category: "Frontend"
+featured: true
+image: "/api/placeholder/1200/600"
+readingTime: 6
+---
+
+# Modern CSS Techniques for 2024
+
+CSS continues to evolve rapidly, bringing powerful new features that make styling more intuitive and efficient. In this article, we'll explore the cutting-edge CSS techniques that are shaping web development in 2024.
+
+## Container Queries: The Game Changer
+
+Container queries allow you to style elements based on their container's size rather than the viewport size.
+
+```css
+.card-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+```
+
+## CSS Grid Subgrid
+
+Subgrid allows nested grids to participate in their parent's grid layout.
+
+```css
+.parent-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.child-grid {
+  display: grid;
+  grid-column: span 2;
+  grid-template-columns: subgrid;
+}
+```
+
+## CSS Cascade Layers
+
+Control the specificity of your styles with cascade layers.
+
+```css
+@layer base, components, utilities;
+
+@layer base {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@layer components {
+  .card h1 {
+    font-size: 1.5rem;
+  }
+}
+```
+
+## New Color Functions
+
+CSS now offers more sophisticated color manipulation.
+
+```css
+:root {
+  --primary: oklch(0.7 0.15 200);
+  --secondary: color-mix(in oklch, var(--primary), white 20%);
+}
+
+.element {
+  color: var(--primary);
+  background: var(--secondary);
+}
+```
+
+## Conclusion
+
+These modern CSS features are changing how we approach web styling. By adopting these techniques, you can create more maintainable, responsive, and beautiful web experiences.
