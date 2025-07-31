@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
@@ -7,6 +6,7 @@ import PageTransition from '../components/ui/PageTransition'
 import Card from '../components/ui/Card'
 import Tag from '../components/ui/Tag'
 import Button from '../components/ui/Button'
+import ParticleBackground from '../components/ui/ParticleBackground'
 
 // Mock data - replace with your actual data
 const featuredProjects = [
@@ -81,17 +81,36 @@ const Home = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center pt-20 section-padding">
-        <div className="container-custom">
+      <section className="relative min-h-screen flex items-center justify-center pt-20 section-padding overflow-hidden">
+        {/* Particle Background */}
+        <ParticleBackground />
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 via-transparent to-accent-50/50 dark:from-primary-900/20 dark:via-transparent dark:to-accent-900/20" />
+        
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
+              {/* Floating Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center px-4 py-2 bg-white/80 dark:bg-dark-800/80 backdrop-blur-sm border border-white/20 dark:border-dark-700/20 rounded-full mb-6 shadow-lg"
+              >
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+                <span className="text-sm text-gray-600 dark:text-gray-400">Available for freelance work</span>
+              </motion.div>
+
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="block text-gray-900 dark:text-gray-100">Hi, I'm</span>
-                <span className="block gradient-text">Your Name</span>
+                <span className="block gradient-text bg-gradient-to-r from-primary-600 via-accent-600 to-primary-700 bg-clip-text text-transparent">
+                  Your Name
+                </span>
               </h1>
               
               <motion.p 
@@ -316,34 +335,222 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-accent-600">
-        <div className="container-custom">
+      {/* Enhanced CTA Section */}
+      <section className="relative py-20 px-4 overflow-hidden">
+        {/* Animated background with multiple layers */}
+        <div className="absolute inset-0">
+          {/* Base gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-700 to-pink-600" />
+          
+          {/* Animated gradient overlay */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 via-blue-500/30 to-purple-500/30"
+            animate={{
+              background: [
+                'linear-gradient(45deg, rgba(6,182,212,0.3) 0%, rgba(59,130,246,0.3) 50%, rgba(147,51,234,0.3) 100%)',
+                'linear-gradient(225deg, rgba(147,51,234,0.3) 0%, rgba(236,72,153,0.3) 50%, rgba(6,182,212,0.3) 100%)',
+                'linear-gradient(45deg, rgba(6,182,212,0.3) 0%, rgba(59,130,246,0.3) 50%, rgba(147,51,234,0.3) 100%)'
+              ]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          
+          {/* Floating geometric shapes */}
+          <motion.div
+            className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-xl"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -50, 0],
+              scale: [1, 1.2, 1]
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-20 right-20 w-24 h-24 bg-cyan-400/20 rounded-xl rotate-45 blur-lg"
+            animate={{
+              x: [0, -80, 0],
+              y: [0, 60, 0],
+              rotate: [45, 135, 45]
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute top-1/2 left-1/3 w-16 h-16 bg-pink-400/20 rounded-full blur-md"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.2, 0.5, 0.2]
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
+
+        {/* Mesh gradient overlay */}
+        <div className="absolute inset-0 opacity-60">
+          <div className="absolute inset-0" style={{
+            background: `
+              radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%)
+            `
+          }} />
+        </div>
+
+        <div className="relative z-10 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center text-white"
+            className="text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Let's Work Together
-            </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-              Have a project in mind? I'd love to hear about it and discuss how we can bring your ideas to life.
-            </p>
-            <Link to="/contact">
-              <Button 
-                className="bg-white text-primary-600 hover:bg-gray-100"
-                size="lg"
-                icon={<ArrowRight size={20} />}
-                iconPosition="right"
+            {/* Floating badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full mb-8 shadow-2xl"
+            >
+              <motion.div
+                className="w-2 h-2 bg-green-400 rounded-full mr-2"
+                animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+              <span className="text-white/90 text-sm font-medium">Available for new projects</span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-bold text-white mb-6"
+            >
+              Ready to Create Something
+              <br />
+              <span className="bg-gradient-to-r from-cyan-200 to-pink-200 bg-clip-text text-transparent">
+                Extraordinary?
+              </span>
+            </motion.h2>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed"
+            >
+              Let's collaborate to transform your vision into a digital masterpiece. 
+              From concept to deployment, I'll help bring your ideas to life with cutting-edge technology 
+              and thoughtful design.
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            >
+              <Link to="/contact">
+                <motion.button
+                  className="group relative px-8 py-4 bg-white text-gray-900 rounded-2xl font-semibold text-lg shadow-2xl overflow-hidden"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {/* Button background effects */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-cyan-100 to-pink-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                  <motion.div
+                    className="absolute inset-0 bg-white"
+                    animate={{
+                      background: [
+                        'linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)',
+                        'linear-gradient(45deg, rgba(254,252,232,1) 0%, rgba(255,255,255,1) 100%)',
+                        'linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)'
+                      ]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  />
+                  
+                  <div className="relative flex items-center space-x-3">
+                    <span>Start a Project</span>
+                    <motion.div
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <ArrowRight size={20} />
+                    </motion.div>
+                  </div>
+                </motion.button>
+              </Link>
+              
+              <motion.button
+                className="group relative px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-2xl font-semibold text-lg shadow-2xl hover:bg-white/20 transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Get In Touch
-              </Button>
-            </Link>
+                <div className="flex items-center space-x-3">
+                  <motion.div
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  >
+                    <Calendar size={20} />
+                  </motion.div>
+                  <span>Schedule a Call</span>
+                </div>
+              </motion.button>
+            </motion.div>
+
+            {/* Social proof or quick stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+            >
+              {[
+                { value: '50+', label: 'Projects Completed' },
+                { value: '30+', label: 'Happy Clients' },
+                { value: '5+', label: 'Years Experience' }
+              ].map((stat, index) => (
+                <div key={stat.label} className="text-center">
+                  <motion.div
+                    className="text-3xl md:text-4xl font-bold text-white mb-2"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    {stat.value}
+                  </motion.div>
+                  <div className="text-white/70 text-sm">{stat.label}</div>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
+
+        {/* Bottom glow effect */}
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-32 bg-gradient-to-t from-white/20 to-transparent blur-3xl" />
       </section>
     </PageTransition>
   )

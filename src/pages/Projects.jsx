@@ -1,9 +1,10 @@
-import React, { useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Github, ExternalLink, Search, Filter } from 'lucide-react'
 import PageTransition from '../components/ui/PageTransition'
 import Card from '../components/ui/Card'
+import Card3D from '../components/ui/Card3D'
 import Tag from '../components/ui/Tag'
 import Button from '../components/ui/Button'
 
@@ -195,11 +196,10 @@ const Projects = () => {
             </motion.h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {featuredProjects.map((project, index) => (
-                <Card 
+              {featuredProjects.map((project) => (
+                <Card3D 
                   key={project.id} 
-                  delay={index * 0.1}
-                  className="overflow-hidden"
+                  className="overflow-hidden cursor-pointer"
                   onClick={() => setSelectedProject(project)}
                 >
                   <div className="relative overflow-hidden">
@@ -261,7 +261,7 @@ const Projects = () => {
                       <Tag variant="primary" size="sm">{project.category}</Tag>
                     </div>
                   </div>
-                </Card>
+                </Card3D>
               ))}
             </div>
           </div>

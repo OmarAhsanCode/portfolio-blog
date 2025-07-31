@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
@@ -6,6 +6,7 @@ import { Calendar, Clock, Search, User, ArrowRight } from 'lucide-react'
 import PageTransition from '../components/ui/PageTransition'
 import Card from '../components/ui/Card'
 import Tag from '../components/ui/Tag'
+import OptimizedImage from '../components/ui/OptimizedImage'
 
 // Mock blog posts data - replace with your actual blog data
 const allPosts = [
@@ -111,8 +112,8 @@ const Blog = () => {
     })
   }, [selectedCategory, searchTerm])
 
-  const featuredPosts = filteredPosts.filter(post => post.featured)
-  const regularPosts = filteredPosts.filter(post => !post.featured)
+  const featuredPosts = useMemo(() => filteredPosts.filter(post => post.featured), [filteredPosts])
+  const regularPosts = useMemo(() => filteredPosts.filter(post => !post.featured), [filteredPosts])
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -206,7 +207,7 @@ const Blog = () => {
                 >
                   <Link to={`/blog/${post.slug}`}>
                     <div className="relative overflow-hidden">
-                      <img 
+                      <OptimizedImage 
                         src={post.image} 
                         alt={post.title}
                         className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
@@ -284,7 +285,7 @@ const Blog = () => {
                   <Link to={`/blog/${post.slug}`}>
                     <div className="flex flex-col md:flex-row">
                       <div className="md:w-1/3 relative overflow-hidden">
-                        <img 
+                        <OptimizedImage 
                           src={post.image} 
                           alt={post.title}
                           className="w-full h-48 md:h-full object-cover transition-transform duration-300 group-hover:scale-105"

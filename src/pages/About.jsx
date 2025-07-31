@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Download, MapPin, Calendar, Coffee, Code, Heart, Award, Users } from 'lucide-react'
