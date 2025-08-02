@@ -1,0 +1,138 @@
+PORTFOLIO PERSONALIZATION CHECKLIST
+=====================================
+
+This file contains all the information needed to replace placeholder content 
+with your actual personal and professional information.
+
+📝 COMPLETE INFORMATION CHECKLIST
+=================================
+
+🧑‍💼 PERSONAL INFORMATION
+------------------------
+1. Your Full Name (currently shows "Your Name")
+2. Professional Title (e.g., "Full Stack Developer", "Software Engineer", etc.)
+3. Personal Bio/About Me Description (2-3 paragraphs about your background, passion, experience)
+4. Location (currently shows "San Francisco, CA")
+5. Years of Experience (currently shows "3 years")
+6. Profile Photo (high-quality headshot image URL or file)
+
+📧 CONTACT INFORMATION
+---------------------
+7. Email Address (currently shows "your.email@example.com")
+8. Phone Number (currently shows "+1 (555) 123-4567")
+9. GitHub Username (currently shows "yourusername")
+10. LinkedIn Username (currently shows "yourusername")
+11. Twitter/X Username (currently shows "yourusername")
+12. Calendly Link (for scheduling calls, if you have one)
+
+💼 PROJECTS INFORMATION
+----------------------
+For each project you want to showcase, provide:
+
+13. Project Names (replace current mock projects)
+14. Project Descriptions (short and long versions)
+15. Technologies Used (tech stack for each project)
+16. GitHub Repository URLs
+17. Live Demo URLs (if available)
+18. Project Images (screenshots or demos)
+19. Project Categories (Frontend, Backend, Full Stack)
+20. Project Status (Completed, Work in Progress)
+21. Project Years (when you built them)
+22. Featured Projects (which 2-3 should be highlighted)
+
+📚 SKILLS & TECHNOLOGIES
+------------------------
+23. Frontend Skills (React, Vue, etc.)
+24. Backend Skills (Node.js, Python, etc.)
+25. Tools & Other Skills (Git, Docker, AWS, etc.)
+
+🎓 PROFESSIONAL TIMELINE
+------------------------
+26. Work Experience (job titles, companies, years, descriptions)
+27. Education (degree, university, year)
+28. Certifications (AWS, etc.)
+29. Notable Achievements (awards, recognitions)
+
+📖 BLOG POSTS INFORMATION
+-------------------------
+For each blog post you want to showcase:
+
+30. Blog Post Titles
+31. Blog Post Excerpts/Descriptions
+32. Blog Post Content (full articles)
+33. Publication Dates
+34. Reading Time Estimates
+35. Blog Post Categories
+36. Blog Post Tags
+37. Blog Post Featured Images
+38. Blog Post Slugs (URL-friendly names)
+
+📊 STATISTICS & FUN FACTS
+-------------------------
+39. Projects Completed Count
+40. Happy Clients Count
+41. Cups of Coffee Count (or any fun metric)
+42. Awards Won Count
+43. Fun Facts About You (5-6 interesting personal facts)
+
+🎨 BRANDING PREFERENCES
+----------------------
+44. Preferred Color Scheme (if you want to change from current purple/blue theme)
+45. Favorite Quote or Tagline
+46. Professional Headshots/Images
+
+🔗 ADDITIONAL LINKS
+------------------
+47. Resume/CV Download Link
+48. Portfolio Website URL (if different from this one)
+49. Other Social Media Links (Instagram, YouTube, etc.)
+50. Newsletter or Blog Subscription Link (if applicable)
+
+===============================================================================
+
+📋 NEXT STEPS
+=============
+
+Once you provide this information, I'll:
+
+1. Replace all placeholder content with your actual data
+2. Update all URLs and links to point to your real profiles
+3. Customize the content to match your professional voice
+4. Ensure consistency across all pages
+5. Optimize SEO with your actual information
+
+You can provide this information in any format you prefer - bullet points, 
+paragraphs, or even a mix. Don't worry if you don't have everything ready 
+at once; we can work through it section by section!
+
+Which section would you like to start with?
+
+===============================================================================
+
+FILES THAT CONTAIN PLACEHOLDER DATA
+===================================
+
+The following files contain placeholder content that will be updated:
+
+- src/pages/Home.jsx (name, projects, blog posts)
+- src/pages/About.jsx (bio, timeline, skills, stats)
+- src/pages/Projects.jsx (all project data)
+- src/pages/Blog.jsx (all blog post data)
+- src/pages/BlogPost.jsx (author info, social links)
+- src/pages/Contact.jsx (contact info, social links)
+- src/pages/NotFound.jsx (page title)
+- src/components/layout/Footer.jsx (social links)
+
+PLACEHOLDER PATTERNS TO REPLACE
+===============================
+
+- "Your Name" → Your actual name
+- "yourusername" → Your actual usernames
+- "your.email@example.com" → Your actual email
+- Mock project data → Your actual projects
+- Mock blog posts → Your actual blog content
+- Sample contact info → Your actual contact details
+- Placeholder images → Your actual images
+- Sample timeline → Your actual work/education history
+
+===============================================================================

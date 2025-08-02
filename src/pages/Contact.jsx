@@ -37,20 +37,20 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'your.email@example.com',
-    href: 'mailto:your.email@example.com'
+    value: 'omarahsanwork@gmail.com',
+    href: 'mailto:omarahsanwork@gmail.com'
   },
   {
     icon: MapPin,
     label: 'Location',
-    value: 'San Francisco, CA',
+    value: 'Lucknow, India (Ready to Relocate)',
     href: null
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567'
+    value: '+91 6393886237',
+    href: 'tel:+916393886237'
   }
 ]
 
@@ -118,7 +118,7 @@ const Contact = () => {
       <InteractiveParticles particleCount={25} />
       
       <Helmet>
-        <title>Contact - Your Name</title>
+        <title>Contact - Omar Ahsan</title>
         <meta name="description" content="Get in touch with me for collaboration, project inquiries, or just to say hello. I'd love to hear from you!" />
       </Helmet>
 
@@ -342,7 +342,7 @@ const Contact = () => {
                 </h3>
                 <div className="space-y-3">
                   <a
-                    href="mailto:your.email@example.com"
+                    href="mailto:omarahsanwork@gmail.com"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-dark-700 transition-colors duration-200 group"
                   >
                     <Mail size={20} className="text-primary-600 dark:text-primary-400" />
@@ -362,7 +362,7 @@ const Contact = () => {
                     </span>
                   </a>
                   <a
-                    href="https://github.com/yourusername/portfolio-blog/discussions"
+                    href="https://github.com/OmarAhsanCode/portfolio-blog/discussions"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-dark-700 transition-colors duration-200 group"

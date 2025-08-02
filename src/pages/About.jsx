@@ -12,55 +12,56 @@ import InteractiveParticles from '../components/ui/InteractiveParticles'
 import ScrollProgress from '../components/ui/ScrollProgress'
 
 const skills = [
-  { category: 'Frontend', items: ['React', 'Vue.js', 'TypeScript', 'TailwindCSS', 'Next.js'] },
-  { category: 'Backend', items: ['Node.js', 'Python', 'Express', 'FastAPI', 'PostgreSQL'] },
-  { category: 'Tools & Other', items: ['Git', 'Docker', 'AWS', 'Figma', 'Jest'] }
+  { category: 'Frontend', items: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS'] },
+  { category: 'Backend', items: ['Node.js', 'Python', 'Java', 'Express', 'REST API'] },
+  { category: 'AI & Tools', items: ['NEAT', 'Machine Learning', 'GitHub', 'Docker', 'Firebase', 'n8n', 'Figma'] }
 ]
 
 const timeline = [
   {
     year: '2024',
-    title: 'Senior Full Stack Developer',
-    company: 'Tech Company Inc.',
-    description: 'Leading development of scalable web applications using React and Node.js.',
+    title: 'ML Intern',
+    company: 'IIT Guwahati',
+    description: 'Worked on machine learning models and data handling tasks for 1.5 months.',
     type: 'work'
   },
   {
-    year: '2023',
-    title: 'AWS Certified Developer',
-    company: 'Amazon Web Services',
-    description: 'Achieved AWS Certified Developer - Associate certification.',
+    year: '2024',
+    title: 'President - GeekRoom Integral Chapter',
+    company: 'Integral University',
+    description: 'Led Lucknow\'s first student tech community; hosted events for 100+ students.',
+    type: 'achievement'
+  },
+  {
+    year: '2024',
+    title: 'Multiple Certifications',
+    company: 'IBM, Google',
+    description: 'Completed certifications in ML, Cloud Computing, and Full Stack Development.',
     type: 'achievement'
   },
   {
     year: '2022',
-    title: 'Full Stack Developer',
-    company: 'Startup XYZ',
-    description: 'Built multiple web applications from concept to deployment.',
-    type: 'work'
-  },
-  {
-    year: '2021',
-    title: 'Computer Science Degree',
-    company: 'University Name',
-    description: 'Bachelor of Science in Computer Science with honors.',
+    title: 'B.Tech CSE (Cloud Computing / AI)',
+    company: 'Integral University',
+    description: 'Currently pursuing Bachelor of Technology in Computer Science Engineering with specialization in Cloud Computing and AI.',
     type: 'education'
   }
 ]
 
 const stats = [
-  { icon: Code, label: 'Projects Completed', value: '50+' },
-  { icon: Coffee, label: 'Cups of Coffee', value: '1000+' },
-  { icon: Users, label: 'Happy Clients', value: '25+' },
-  { icon: Award, label: 'Awards Won', value: '5' }
+  { icon: Code, label: 'Projects Completed', value: '15+' },
+  { icon: Coffee, label: 'Hackathons Joined', value: '6+' },
+  { icon: Users, label: 'Students Reached', value: '100+' },
+  { icon: Award, label: 'Certifications', value: '5' }
 ]
 
 const funFacts = [
-  'I can solve a Rubik\'s cube in under 2 minutes',
-  'I\'ve traveled to 15 different countries',
-  'I make the best coffee in the office (self-proclaimed)',
-  'I once debugged code in my sleep and woke up with the solution',
-  'I speak 3 programming languages fluently: JavaScript, Python, and TypeScript'
+  'I trained AI to play Flappy Bird using neural evolution',
+  'Built 15+ automation and AI tools in my first year of coding',
+  'Self-taught developer from Lucknow, India',
+  'Hosted coding sessions for over 100 students as GeekRoom President',
+  'Participated in 6+ national-level hackathons including SIH\'24 and Adobe Hackathon 2025',
+  'Obsessed with clean UI design and minimalist interfaces'
 ]
 
 const About = () => {
@@ -72,8 +73,8 @@ const About = () => {
       <InteractiveParticles particleCount={25} />
       
       <Helmet>
-        <title>About - Your Name</title>
-        <meta name="description" content="Learn more about me, my journey, skills, and what drives my passion for development." />
+        <title>About - Omar Ahsan</title>
+        <meta name="description" content="Learn more about me, my journey in AI/Cloud Engineering, skills, and what drives my passion for automation and intelligent systems." />
       </Helmet>
 
       {/* Hero Section */}
@@ -91,37 +92,45 @@ const About = () => {
               
               <div className="prose prose-lg dark:prose-invert max-w-none">
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
-                  Hi! I'm a passionate full-stack developer with over 3 years of experience creating 
-                  digital experiences that make a difference. I love the challenge of turning complex 
-                  problems into simple, beautiful solutions.
+                  Hi! I'm a passionate AI/Cloud Engineering student with 1 year of experience creating 
+                  automation tools, intelligent agents, and dynamic web applications. I love blending 
+                  machine learning with full-stack development to build solutions that solve real-world problems.
                 </p>
                 
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
-                  When I'm not coding, you can find me exploring new technologies, contributing to 
-                  open source projects, or sharing knowledge through blog posts and mentoring. 
+                  When I'm not coding, you can find me exploring new AI technologies, leading tech communities 
+                  through GeekRoom, or participating in hackathons. I've built AI-powered assistants, 
+                  trained neural networks to play games, and created automation workflows that make life easier. 
                   I believe in continuous learning and staying curious about the ever-evolving 
-                  world of technology.
+                  intersection of AI, cloud computing, and automation.
                 </p>
               </div>
 
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-8">
                 <div className="flex items-center space-x-1">
                   <MapPin size={16} />
-                  <span>San Francisco, CA</span>
+                  <span>Lucknow, India (Ready to Relocate)</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <Calendar size={16} />
-                  <span>Available for work</span>
+                  <span>Available for internships</span>
                 </div>
               </div>
 
-              <GlassButton 
-                icon={<Download size={18} />}
-                size="lg"
-                className="bg-blue-500/20 hover:bg-blue-500/30 border-blue-500/30"
+              <a 
+                href="/Omar Resume.pdf" 
+                download="Omar_Ahsan_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Download Resume
-              </GlassButton>
+                <GlassButton 
+                  icon={<Download size={18} />}
+                  size="lg"
+                  className="bg-blue-500/20 hover:bg-blue-500/30 border-blue-500/30"
+                >
+                  Download Resume
+                </GlassButton>
+              </a>
             </motion.div>
 
             <motion.div
@@ -133,8 +142,8 @@ const About = () => {
               <div className="relative">
                 <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white dark:border-dark-800 shadow-2xl">
                   <img 
-                    src="https://picsum.photos/320/320?random=40" 
-                    alt="Your Name"
+                    src="/Profile Photo.jpg" 
+                    alt="Omar Ahsan"
                     className="w-full h-full object-cover"
                   />
                 </div>

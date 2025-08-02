@@ -12,67 +12,67 @@ import { GlassCard, GlassButton } from '../components/ui/GlassComponents'
 import InteractiveParticles from '../components/ui/InteractiveParticles'
 import ScrollProgress from '../components/ui/ScrollProgress'
 
-// Mock data - replace with your actual data
+// Featured projects data
 const featuredProjects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB.',
+    title: 'Flappy Bird AI with NEAT',
+    description: 'AI agents trained using NEAT algorithm to play Flappy Bird with real-time visualizations and performance tracking.',
     image: 'https://picsum.photos/400/250?random=1',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    github: 'https://github.com/yourusername/ecommerce',
-    demo: 'https://ecommerce-demo.com',
+    tags: ['Python', 'NEAT', 'AI', 'Machine Learning', 'Pygame'],
+    github: 'https://github.com/OmarAhsanCode/Flappy-Bird-Ai',
+    demo: null,
     status: 'completed'
   },
   {
     id: 2,
-    title: 'AI Chat Application',
-    description: 'Real-time chat app with AI integration using OpenAI API.',
+    title: 'AI Web Scraper',
+    description: 'Intelligent web scraping tool that collects structured data from web sources using Python with advanced parsing capabilities.',
     image: 'https://picsum.photos/400/250?random=2',
-    tags: ['React', 'Socket.io', 'OpenAI', 'Express'],
-    github: 'https://github.com/yourusername/ai-chat',
-    demo: 'https://ai-chat-demo.com',
+    tags: ['Python', 'Web Scraping', 'AI', 'Data Processing', 'BeautifulSoup'],
+    github: 'https://github.com/OmarAhsanCode/AI-WebScraper',
+    demo: null,
     status: 'completed'
   },
   {
     id: 3,
-    title: 'Task Management System',
-    description: 'Collaborative project management tool with real-time updates.',
+    title: 'Portfolio Blog Website',
+    description: 'Modern portfolio and blog website built with React and TailwindCSS, featuring dark mode, animations, and responsive design.',
     image: 'https://picsum.photos/400/250?random=3',
-    tags: ['Vue.js', 'Firebase', 'TailwindCSS'],
-    github: 'https://github.com/yourusername/task-manager',
+    tags: ['React', 'TailwindCSS', 'Framer Motion', 'JavaScript'],
+    github: 'https://github.com/OmarAhsanCode/portfolio-blog',
     demo: null,
-    status: 'wip'
+    status: 'completed'
   }
 ]
 
 const latestPosts = [
   {
     id: 1,
-    title: 'Building Scalable React Applications',
-    excerpt: 'Learn best practices for structuring large React applications with performance in mind.',
-    slug: 'building-scalable-react-applications',
-    date: '2024-01-15',
+    title: 'Building AI Agents with NEAT',
+    excerpt: 'Exploring how to train neural networks to evolve and play games using the NEAT algorithm.',
+    slug: 'building-ai-agents-neat',
+    date: '2024-12-15',
     readingTime: 8,
-    tags: ['React', 'Performance', 'Architecture']
+    tags: ['AI', 'NEAT', 'Machine Learning']
   },
   {
     id: 2,
-    title: 'Modern CSS Techniques for 2024',
-    excerpt: 'Explore the latest CSS features and how to use them in your projects.',
-    slug: 'modern-css-techniques-2024',
-    date: '2024-01-10',
+    title: 'Automating Web Scraping with Python',
+    excerpt: 'Learn how to build intelligent web scrapers that can adapt to different website structures.',
+    slug: 'automating-web-scraping-python',
+    date: '2024-11-20',
     readingTime: 6,
-    tags: ['CSS', 'Web Design', 'Frontend']
+    tags: ['Python', 'Web Scraping', 'Automation']
   },
   {
     id: 3,
-    title: 'Deploying with Docker and CI/CD',
-    excerpt: 'A complete guide to containerizing your applications and setting up automated deployments.',
-    slug: 'deploying-docker-cicd',
-    date: '2024-01-05',
+    title: 'Modern Portfolio Development with React',
+    excerpt: 'A complete guide to building a responsive portfolio website using React and TailwindCSS.',
+    slug: 'modern-portfolio-development-react',
+    date: '2024-10-10',
     readingTime: 12,
-    tags: ['Docker', 'DevOps', 'CI/CD']
+    tags: ['React', 'TailwindCSS', 'Web Development']
   }
 ]
 
@@ -82,8 +82,8 @@ const Home = () => {
       <ScrollProgress color="purple" />
       <GeometricBackground density="medium" interactive={true} />
       <Helmet>
-        <title>Your Name - Full Stack Developer & Blogger</title>
-        <meta name="description" content="Welcome to my portfolio and blog. I'm a full-stack developer passionate about creating amazing web experiences." />
+        <title>Omar Ahsan - AI/Cloud Engineering Student & Developer</title>
+        <meta name="description" content="Welcome to my portfolio and blog. I'm an AI/Cloud Engineering student passionate about developing automation tools, intelligent agents, and dynamic web apps." />
       </Helmet>
 
       {/* Hero Section */}
@@ -124,7 +124,7 @@ const Home = () => {
                 </span>
                 <span className="block">
                   <GradientText 
-                    text="Your Name" 
+                    text="Omar Ahsan" 
                     gradient="purple-pink"
                     className="text-4xl md:text-6xl lg:text-7xl font-bold"
                   />
@@ -138,7 +138,7 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <TypewriterText 
-                  text="Full-stack developer passionate about building beautiful, functional web applications. I love turning ideas into reality through clean code and intuitive design."
+                  text="AI/Cloud Engineering student passionate about developing automation tools, intelligent agents, and dynamic web apps. I blend machine learning, full-stack development, and AI workflows to create solutions that solve real-world problems."
                   speed={25}
                 />
               </motion.p>
@@ -158,14 +158,21 @@ const Home = () => {
                   <Link to="/projects">View My Work</Link>
                 </GlassButton>
                 
-                <GlassButton 
-                  variant="outline"
-                  size="lg"
-                  icon={<Download size={20} />}
-                  className="border-white/30 hover:bg-white/10"
+                <a 
+                  href="/Omar Resume.pdf" 
+                  download="Omar_Ahsan_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Download Resume
-                </GlassButton>
+                  <GlassButton 
+                    variant="outline"
+                    size="lg"
+                    icon={<Download size={20} />}
+                    className="border-white/30 hover:bg-white/10"
+                  >
+                    Download Resume
+                  </GlassButton>
+                </a>
               </motion.div>
             </motion.div>
 
@@ -529,9 +536,9 @@ const Home = () => {
               className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
             >
               {[
-                { value: '50+', label: 'Projects Completed' },
-                { value: '30+', label: 'Happy Clients' },
-                { value: '5+', label: 'Years Experience' }
+                { value: '15+', label: 'Projects Completed' },
+                { value: '100+', label: 'Students Reached' },
+                { value: '1+', label: 'Years Experience' }
               ].map((stat, index) => (
                 <div key={stat.label} className="text-center">
                   <motion.div

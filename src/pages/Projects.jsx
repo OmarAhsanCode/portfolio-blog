@@ -12,95 +12,109 @@ import GeometricBackground from '../components/ui/GeometricBackground'
 import InteractiveParticles from '../components/ui/InteractiveParticles'
 import ScrollProgress from '../components/ui/ScrollProgress'
 
-// Mock projects data - replace with your actual projects
+// Omar's actual projects data
 const allProjects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, inventory management, and admin dashboard.',
-    longDescription: 'This comprehensive e-commerce platform was built to handle everything from product catalog management to order processing. The frontend uses React with Redux for state management, while the backend is powered by Node.js and Express. The application includes features like real-time inventory updates, secure payment processing with Stripe, email notifications, and a comprehensive admin panel.',
+    title: 'Flappy Bird AI with NEAT',
+    description: 'AI agents trained using NEAT algorithm to play Flappy Bird with real-time visualizations and performance tracking.',
+    longDescription: 'This project demonstrates the power of neural evolution by training AI agents to play Flappy Bird using the NEAT (NeuroEvolution of Augmenting Topologies) algorithm. The system includes real-time visualization of neural networks, fitness tracking, and generation-based evolution. Watch as the AI learns to navigate through pipes with increasing accuracy over successive generations.',
     image: 'https://picsum.photos/600/400?random=10',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux', 'Express'],
-    category: 'Full Stack',
-    github: 'https://github.com/yourusername/ecommerce',
-    demo: 'https://ecommerce-demo.com',
+    tags: ['Python', 'NEAT', 'AI', 'Machine Learning', 'Pygame', 'Neural Networks'],
+    category: 'AI/ML',
+    github: 'https://github.com/OmarAhsanCode/Flappy-Bird-Ai',
+    demo: null,
     status: 'completed',
     featured: true,
     year: 2024
   },
   {
     id: 2,
-    title: 'AI Chat Application',
-    description: 'Real-time chat application with AI integration using OpenAI API. Supports multiple chat rooms, file sharing, and AI-powered message suggestions.',
-    longDescription: 'A modern chat application that combines real-time messaging with AI capabilities. Users can create chat rooms, share files, and get AI-powered suggestions for responses. The application uses Socket.io for real-time communication and integrates with OpenAI\'s API for intelligent features.',
+    title: 'AI Web Scraper',
+    description: 'Intelligent web scraping tool that collects structured data from web sources using Python with advanced parsing capabilities.',
+    longDescription: 'An advanced web scraping solution that intelligently extracts structured data from various websites. The tool features adaptive parsing, data cleaning, and export capabilities. Built with Python and BeautifulSoup, it can handle dynamic content and provides robust error handling for reliable data collection.',
     image: 'https://picsum.photos/600/400?random=11',
-    tags: ['React', 'Socket.io', 'OpenAI', 'Express', 'MongoDB'],
-    category: 'Full Stack',
-    github: 'https://github.com/yourusername/ai-chat',
-    demo: 'https://ai-chat-demo.com',
+    tags: ['Python', 'Web Scraping', 'BeautifulSoup', 'Data Processing', 'Automation'],
+    category: 'Automation',
+    github: 'https://github.com/OmarAhsanCode/AI-WebScraper',
+    demo: null,
     status: 'completed',
     featured: true,
     year: 2024
   },
   {
     id: 3,
-    title: 'Task Management System',
-    description: 'Collaborative project management tool with real-time updates, team collaboration features, and advanced reporting.',
-    longDescription: 'A comprehensive task management system designed for teams. Features include project boards, task assignments, time tracking, file attachments, and real-time collaboration. The application provides detailed analytics and reporting to help teams track productivity and project progress.',
+    title: 'Portfolio Blog Website',
+    description: 'Modern portfolio and blog website built with React and TailwindCSS, featuring dark mode, animations, and responsive design.',
+    longDescription: 'A fully responsive portfolio website built with React and TailwindCSS. Features include dark/light mode toggle, smooth animations with Framer Motion, project showcase, blog functionality, and optimized performance. The design focuses on clean aesthetics and user experience.',
     image: 'https://picsum.photos/600/400?random=12',
-    tags: ['Vue.js', 'Firebase', 'TailwindCSS', 'Chart.js'],
-    category: 'Frontend',
-    github: 'https://github.com/yourusername/task-manager',
+    tags: ['React', 'TailwindCSS', 'Framer Motion', 'JavaScript', 'Responsive Design'],
+    category: 'Full Stack',
+    github: 'https://github.com/OmarAhsanCode/portfolio-blog',
     demo: null,
-    status: 'wip',
-    featured: false,
+    status: 'completed',
+    featured: true,
     year: 2024
   },
   {
     id: 4,
-    title: 'Weather Dashboard',
-    description: 'Beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.',
-    longDescription: 'A comprehensive weather dashboard that provides detailed weather information with beautiful visualizations. The app includes features like location-based forecasts, weather maps, historical data, and customizable widgets.',
+    title: 'Task Manager Web App',
+    description: 'CRUD application with user authentication, priority-based task management, and responsive design.',
+    longDescription: 'A comprehensive task management application featuring user authentication, CRUD operations, task prioritization, and deadline tracking. Built with modern web technologies to provide a seamless user experience for personal productivity.',
     image: 'https://picsum.photos/600/400?random=13',
-    tags: ['React', 'TypeScript', 'Chart.js', 'Weather API'],
-    category: 'Frontend',
-    github: 'https://github.com/yourusername/weather-dashboard',
-    demo: 'https://weather-dashboard-demo.com',
-    status: 'completed',
-    featured: false,
-    year: 2023
-  },
-  {
-    id: 5,
-    title: 'Blog CMS API',
-    description: 'RESTful API for a content management system with authentication, role-based permissions, and media handling.',
-    longDescription: 'A robust CMS API built with Node.js and Express. Features include user authentication with JWT, role-based access control, content versioning, media upload handling, and comprehensive API documentation with Swagger.',
-    image: 'https://picsum.photos/600/400?random=14',
-    tags: ['Node.js', 'Express', 'PostgreSQL', 'JWT', 'Swagger'],
-    category: 'Backend',
-    github: 'https://github.com/yourusername/blog-cms-api',
+    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Authentication'],
+    category: 'Full Stack',
+    github: 'https://github.com/OmarAhsanCode/TaskManager',
     demo: null,
     status: 'completed',
     featured: false,
-    year: 2023
+    year: 2024
+  },
+  {
+    id: 5,
+    title: 'Sorting Algorithm Visualizer',
+    description: 'Interactive visualization tool for various sorting algorithms with real-time animations and performance metrics.',
+    longDescription: 'An educational tool that visualizes how different sorting algorithms work through interactive animations. Users can compare algorithm performance, adjust array sizes, and control animation speed to better understand algorithmic complexity.',
+    image: 'https://picsum.photos/600/400?random=14',
+    tags: ['JavaScript', 'HTML', 'CSS', 'Algorithms', 'Visualization'],
+    category: 'Frontend',
+    github: 'https://github.com/OmarAhsanCode/Sorting-Algorithm-Visualizer',
+    demo: null,
+    status: 'completed',
+    featured: false,
+    year: 2024
   },
   {
     id: 6,
-    title: 'Portfolio Website',
-    description: 'This very website! Built with React, TailwindCSS, and Framer Motion for smooth animations.',
-    longDescription: 'A modern portfolio and blog website built with React and TailwindCSS. Features include dark/light mode, smooth animations with Framer Motion, MDX blog support, and responsive design. The site is optimized for performance and SEO.',
+    title: 'Tic Tac Toe with AI',
+    description: 'Classic Tic Tac Toe game with AI opponent using minimax algorithm and multiple difficulty levels.',
+    longDescription: 'A modern take on the classic Tic Tac Toe game featuring an intelligent AI opponent powered by the minimax algorithm. The game includes multiple difficulty levels, clean UI design, and responsive gameplay.',
     image: 'https://picsum.photos/600/400?random=15',
-    tags: ['React', 'TailwindCSS', 'Framer Motion', 'MDX', 'Vite'],
+    tags: ['JavaScript', 'HTML', 'CSS', 'Minimax Algorithm', 'Game Development'],
     category: 'Frontend',
-    github: 'https://github.com/yourusername/portfolio',
-    demo: 'https://yourname.dev',
+    github: 'https://github.com/OmarAhsanCode/TicTacToe',
+    demo: null,
     status: 'completed',
-    featured: true,
+    featured: false,
+    year: 2024
+  },
+  {
+    id: 7,
+    title: 'Calculator Application',
+    description: 'Responsive calculator with arithmetic operations and clean, intuitive user interface.',
+    longDescription: 'A fully functional calculator application built with vanilla JavaScript. Features include basic arithmetic operations, responsive design, keyboard support, and error handling for edge cases.',
+    image: 'https://picsum.photos/600/400?random=16',
+    tags: ['JavaScript', 'HTML', 'CSS', 'Responsive Design'],
+    category: 'Frontend',
+    github: 'https://github.com/OmarAhsanCode/Calculator',
+    demo: null,
+    status: 'completed',
+    featured: false,
     year: 2024
   }
 ]
 
-const categories = ['All', 'Full Stack', 'Frontend', 'Backend']
+const categories = ['All', 'Full Stack', 'AI/ML', 'Automation', 'Frontend']
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All')
@@ -128,8 +142,8 @@ const Projects = () => {
       <InteractiveParticles particleCount={30} />
       
       <Helmet>
-        <title>Projects - Your Name</title>
-        <meta name="description" content="Explore my portfolio of web development projects, including full-stack applications, frontend interfaces, and backend systems." />
+        <title>Projects - Omar Ahsan</title>
+        <meta name="description" content="Explore my portfolio of AI/ML projects, automation tools, and web development projects, including AI agents, web scrapers, and full-stack applications." />
       </Helmet>
 
       {/* Hero Section */}

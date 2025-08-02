@@ -18,7 +18,7 @@ const NotFound = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>404 - Page Not Found | Your Name</title>
+        <title>404 - Page Not Found | Omar Ahsan</title>
         <meta name="description" content="The page you're looking for doesn't exist. Let's get you back on track." />
       </Helmet>
 

@@ -14,95 +14,95 @@ import GeometricBackground from '../components/ui/GeometricBackground'
 import InteractiveParticles from '../components/ui/InteractiveParticles'
 import ScrollProgress from '../components/ui/ScrollProgress'
 
-// Mock blog posts data - replace with your actual blog data
+// Blog posts data - you can add your actual blog content here
 const allPosts = [
   {
     id: 1,
-    title: 'Building Scalable React Applications',
-    excerpt: 'Learn best practices for structuring large React applications with performance in mind. We\'ll cover component architecture, state management, and optimization techniques.',
-    slug: 'building-scalable-react-applications',
+    title: 'Building AI Agents with NEAT Algorithm',
+    excerpt: 'Learn how to create evolving AI agents using NeuroEvolution of Augmenting Topologies. We\'ll explore neural networks, genetic algorithms, and game AI.',
+    slug: 'building-ai-agents-neat-algorithm',
     content: '', // This would be loaded from MDX files
-    author: 'Your Name',
-    date: '2024-01-15',
+    author: 'Omar Ahsan',
+    date: '2024-12-15',
     readingTime: 8,
-    tags: ['React', 'Performance', 'Architecture'],
-    category: 'Frontend',
+    tags: ['AI', 'NEAT', 'Neural Networks', 'Game Development'],
+    category: 'AI/ML',
     featured: true,
     image: 'https://picsum.photos/800/400?random=20'
   },
   {
     id: 2,
-    title: 'Modern CSS Techniques for 2024',
-    excerpt: 'Explore the latest CSS features and how to use them in your projects. From container queries to cascade layers, discover what\'s new in CSS.',
-    slug: 'modern-css-techniques-2024',
+    title: 'Automating Web Scraping with Python',
+    excerpt: 'Discover how to build intelligent web scrapers that can adapt to different website structures and extract meaningful data efficiently.',
+    slug: 'automating-web-scraping-python',
     content: '',
-    author: 'Your Name',
-    date: '2024-01-10',
+    author: 'Omar Ahsan',
+    date: '2024-11-20',
     readingTime: 6,
-    tags: ['CSS', 'Web Design', 'Frontend'],
-    category: 'Frontend',
+    tags: ['Python', 'Web Scraping', 'Automation', 'Data Processing'],
+    category: 'Automation',
     featured: true,
     image: 'https://picsum.photos/800/400?random=21'
   },
   {
     id: 3,
-    title: 'Deploying with Docker and CI/CD',
-    excerpt: 'A complete guide to containerizing your applications and setting up automated deployments. Learn Docker best practices and CI/CD workflows.',
-    slug: 'deploying-docker-cicd',
+    title: 'Modern Portfolio Development with React',
+    excerpt: 'A complete guide to building a responsive portfolio website using React, TailwindCSS, and Framer Motion. Includes dark mode and animations.',
+    slug: 'modern-portfolio-development-react',
     content: '',
-    author: 'Your Name',
-    date: '2024-01-05',
+    author: 'Omar Ahsan',
+    date: '2024-10-10',
     readingTime: 12,
-    tags: ['Docker', 'DevOps', 'CI/CD'],
-    category: 'DevOps',
+    tags: ['React', 'TailwindCSS', 'Portfolio', 'Web Development'],
+    category: 'Frontend',
     featured: false,
     image: 'https://picsum.photos/800/400?random=22'
   },
   {
     id: 4,
-    title: 'TypeScript Best Practices',
-    excerpt: 'Improve your TypeScript skills with these advanced patterns and best practices. Learn about utility types, generics, and effective type design.',
-    slug: 'typescript-best-practices',
+    title: 'Getting Started with Machine Learning in Python',
+    excerpt: 'Learn the fundamentals of machine learning using Python. We\'ll cover libraries, algorithms, and practical implementation techniques.',
+    slug: 'getting-started-machine-learning-python',
     content: '',
-    author: 'Your Name',
-    date: '2023-12-28',
+    author: 'Omar Ahsan',
+    date: '2024-09-15',
     readingTime: 10,
-    tags: ['TypeScript', 'JavaScript', 'Development'],
-    category: 'Development',
+    tags: ['Python', 'Machine Learning', 'AI', 'Data Science'],
+    category: 'AI/ML',
     featured: false,
     image: 'https://picsum.photos/800/400?random=23'
   },
   {
     id: 5,
-    title: 'Building RESTful APIs with Node.js',
-    excerpt: 'Learn how to create robust and scalable REST APIs using Node.js and Express. We\'ll cover authentication, validation, and error handling.',
-    slug: 'building-restful-apis-nodejs',
+    title: 'Building Automation Tools with n8n',
+    excerpt: 'Discover how to create powerful automation workflows using n8n. Learn to connect APIs, automate tasks, and streamline processes.',
+    slug: 'building-automation-tools-n8n',
     content: '',
-    author: 'Your Name',
-    date: '2023-12-20',
+    author: 'Omar Ahsan',
+    date: '2024-08-25',
     readingTime: 15,
-    tags: ['Node.js', 'Express', 'API', 'Backend'],
-    category: 'Backend',
+    tags: ['n8n', 'Automation', 'Workflows', 'APIs'],
+    category: 'Automation',
     featured: false,
     image: 'https://picsum.photos/800/400?random=24'
   },
   {
     id: 6,
-    title: 'Database Design Principles',
-    excerpt: 'Master the fundamentals of database design with practical examples. Learn about normalization, indexing, and query optimization.',
-    slug: 'database-design-principles',
+    title: 'Leading Tech Communities as a Student',
+    excerpt: 'Insights from my experience as President of GeekRoom. Learn how to build and lead tech communities, organize events, and foster learning.',
+    slug: 'leading-tech-communities-student',
     content: '',
-    author: 'Your Name',
-    date: '2023-12-15',
+    author: 'Omar Ahsan',
+    date: '2024-07-18',
     readingTime: 9,
-    tags: ['Database', 'SQL', 'Backend'],
-    category: 'Backend',
+    tags: ['Leadership', 'Community', 'Student Life', 'Tech Events'],
+    category: 'Community',
     featured: false,
     image: 'https://picsum.photos/800/400?random=25'
   }
 ]
 
-const categories = ['All', 'Frontend', 'Backend', 'DevOps', 'Development']
+const categories = ['All', 'AI/ML', 'Automation', 'Frontend', 'Community']
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('All')
@@ -137,8 +137,8 @@ const Blog = () => {
       <InteractiveParticles particleCount={20} />
       
       <Helmet>
-        <title>Blog - Your Name</title>
-        <meta name="description" content="Read my latest thoughts on web development, programming, and technology. Tutorials, insights, and technical deep-dives." />
+        <title>Blog - Omar Ahsan</title>
+        <meta name="description" content="Read my thoughts on AI, machine learning, automation, and web development. Sharing insights from my journey in technology." />
       </Helmet>
 
       {/* Hero Section */}

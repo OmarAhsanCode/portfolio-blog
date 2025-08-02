@@ -12,14 +12,14 @@ import LoadingSpinner from '../components/ui/LoadingSpinner'
 const blogPosts = {
   'building-scalable-react-applications': {
     id: 1,
-    title: 'Building Scalable React Applications',
-    excerpt: 'Learn best practices for structuring large React applications with performance in mind.',
-    slug: 'building-scalable-react-applications',
-    author: 'Your Name',
-    date: '2024-01-15',
+    title: 'Building AI Agents with NEAT Algorithm',
+    excerpt: 'Learn how to create evolving AI agents using NeuroEvolution of Augmenting Topologies.',
+    slug: 'building-ai-agents-neat-algorithm',
+    author: 'Omar Ahsan',
+    date: '2024-12-15',
     readingTime: 8,
-    tags: ['React', 'Performance', 'Architecture'],
-    category: 'Frontend',
+    tags: ['AI', 'NEAT', 'Neural Networks', 'Game Development'],
+    category: 'AI/ML',
     image: 'https://picsum.photos/1200/600?random=30',
     content: `
 # Building Scalable React Applications
@@ -362,7 +362,7 @@ What's your experience with scaling React applications? Share your thoughts and 
     title: 'Modern CSS Techniques for 2024',
     excerpt: 'Explore the latest CSS features and how to use them in your projects.',
     slug: 'modern-css-techniques-2024',
-    author: 'Your Name',
+    author: 'Omar Ahsan',
     date: '2024-01-10',
     readingTime: 6,
     tags: ['CSS', 'Web Design', 'Frontend'],
@@ -481,7 +481,7 @@ const BlogPost = () => {
   return (
     <PageTransition>
       <Helmet>
-        <title>{post.title} - Your Name</title>
+        <title>{post.title} - Omar Ahsan</title>
         <meta name="description" content={post.excerpt} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
@@ -680,9 +680,9 @@ const BlogPost = () => {
           >
             <div className="flex flex-col md:flex-row items-center gap-6">
               <img 
-                src="/api/placeholder/120/120" 
+                src="/Profile Photo.jpg" 
                 alt={post.author}
-                className="w-20 h-20 rounded-full"
+                className="w-20 h-20 rounded-full object-cover"
               />
               <div className="text-center md:text-left">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
@@ -694,7 +694,7 @@ const BlogPost = () => {
                 </p>
                 <div className="flex justify-center md:justify-start space-x-4">
                   <a
-                    href="https://twitter.com/yourusername"
+                    href="https://x.com/omarahsan_"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
@@ -702,7 +702,7 @@ const BlogPost = () => {
                     <Twitter size={20} />
                   </a>
                   <a
-                    href="https://linkedin.com/in/yourusername"
+                    href="https://linkedin.com/in/omarahsan360"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
@@ -736,7 +736,7 @@ const BlogPost = () => {
                   Join the conversation and share your thoughts!
                 </p>
                 <a
-                  href={`https://github.com/yourusername/portfolio-blog/discussions/new?category=blog&title=${encodeURIComponent(post.title)}`}
+                  href={`https://github.com/OmarAhsanCode/portfolio-blog/discussions/new?category=blog&title=${encodeURIComponent(post.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center space-x-2"

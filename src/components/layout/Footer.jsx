@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import { Heart, Github, Linkedin, Twitter, Mail, ArrowUp } from 'lucide-react'
 
 const socialLinks = [
-  { name: 'GitHub', url: 'https://github.com/yourusername', icon: Github },
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: Linkedin },
-  { name: 'Twitter', url: 'https://twitter.com/yourusername', icon: Twitter },
-  { name: 'Email', url: 'mailto:your.email@example.com', icon: Mail },
+  { name: 'GitHub', url: 'https://github.com/OmarAhsanCode', icon: Github },
+  { name: 'LinkedIn', url: 'https://linkedin.com/in/omarahsan360', icon: Linkedin },
+  { name: 'Twitter', url: 'https://x.com/omarahsan_', icon: Twitter },
+  { name: 'Email', url: 'mailto:omarahsanwork@gmail.com', icon: Mail },
 ]
 
 const quickLinks = [
