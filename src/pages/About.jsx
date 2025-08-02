@@ -48,6 +48,97 @@ const timeline = [
   }
 ]
 
+const certifications = [
+  {
+    id: 1,
+    title: 'Machine Learning with Python',
+    issuer: 'IBM',
+    date: '2024',
+    badge: '/certifications/IBM ML0101EN Certificate _ Integral University MACHINE LEARNING.pdf',
+    description: 'Comprehensive machine learning course covering supervised and unsupervised learning algorithms, model evaluation, and Python implementation.',
+    skills: ['Python', 'Scikit-learn', 'Machine Learning', 'Data Analysis', 'Model Evaluation'],
+    credentialId: 'IBM-ML0101EN',
+    verifyUrl: '/certifications/IBM ML0101EN Certificate _ Integral University MACHINE LEARNING.pdf'
+  },
+  {
+    id: 2,
+    title: 'Data Visualization with Python',
+    issuer: 'IBM',
+    date: '2024',
+    badge: '/certifications/IBM DV0101EN Certificate _ Integral University DATA VISUALIZATION.pdf',
+    description: 'Advanced data visualization techniques using Python libraries like Matplotlib, Seaborn, and Plotly for creating compelling data stories.',
+    skills: ['Python', 'Matplotlib', 'Seaborn', 'Plotly', 'Data Visualization'],
+    credentialId: 'IBM-DV0101EN',
+    verifyUrl: '/certifications/IBM DV0101EN Certificate _ Integral University DATA VISUALIZATION.pdf'
+  },
+  {
+    id: 3,
+    title: 'Statistics for Data Science',
+    issuer: 'IBM Cognitive Class',
+    date: '2024',
+    badge: '/certifications/IBM ST0101EN Certificate _ Cognitive Class.PDF',
+    description: 'Fundamental statistical concepts and methods essential for data science, including hypothesis testing and statistical inference.',
+    skills: ['Statistics', 'Data Science', 'Hypothesis Testing', 'Statistical Analysis'],
+    credentialId: 'IBM-ST0101EN',
+    verifyUrl: '/certifications/IBM ST0101EN Certificate _ Cognitive Class.PDF'
+  },
+  {
+    id: 4,
+    title: 'Cloud Application Development',
+    issuer: 'IBM',
+    date: '2024',
+    badge: '/certifications/IBM CB101EN.pdf',
+    description: 'Hands-on experience in developing and deploying cloud applications using modern cloud platforms and technologies.',
+    skills: ['Cloud Computing', 'Application Development', 'DevOps', 'Deployment'],
+    credentialId: 'IBM-CB101EN',
+    verifyUrl: '/certifications/IBM CB101EN.pdf'
+  },
+  {
+    id: 5,
+    title: 'Full Stack Development',
+    issuer: 'Professional Certification',
+    date: '2024',
+    badge: '/certifications/Fullstack.pdf',
+    description: 'Complete full-stack development certification covering both front-end and back-end technologies for modern web applications.',
+    skills: ['React', 'Node.js', 'JavaScript', 'Full Stack', 'Web Development'],
+    credentialId: 'FULLSTACK-2024',
+    verifyUrl: '/certifications/Fullstack.pdf'
+  },
+  {
+    id: 6,
+    title: 'Summer Analytics - Machine Learning',
+    issuer: 'IIT Guwahati',
+    date: '2024',
+    badge: '/certifications/IITG Summer Analytics ML.jpg',
+    description: 'Intensive summer program at IIT Guwahati focusing on advanced machine learning concepts and practical applications.',
+    skills: ['Machine Learning', 'Analytics', 'Research', 'Python', 'Deep Learning'],
+    credentialId: 'IITG-SA-ML-2024',
+    verifyUrl: '/certifications/IITG Summer Analytics ML.jpg'
+  },
+  {
+    id: 7,
+    title: 'Hack2Skill Competition',
+    issuer: 'Hack2Skill',
+    date: '2024',
+    badge: '/certifications/Hack2skill-Certificate.png',
+    description: 'Recognition for outstanding performance in competitive programming and problem-solving challenges.',
+    skills: ['Problem Solving', 'Competitive Programming', 'Algorithms', 'Data Structures'],
+    credentialId: 'HACK2SKILL-2024',
+    verifyUrl: '/certifications/Hack2skill-Certificate.png'
+  },
+  {
+    id: 8,
+    title: 'Ideathon Innovation Challenge',
+    issuer: 'Innovation Hub',
+    date: '2024',
+    badge: '/certifications/Ideathon Certificate.pdf',
+    description: 'Participated in innovation challenge focused on developing creative solutions for real-world problems.',
+    skills: ['Innovation', 'Problem Solving', 'Ideation', 'Project Management'],
+    credentialId: 'IDEATHON-2024',
+    verifyUrl: '/certifications/Ideathon Certificate.pdf'
+  }
+]
+
 const stats = [
   { icon: Code, label: 'Projects Completed', value: '15+' },
   { icon: Coffee, label: 'Hackathons Joined', value: '6+' },
@@ -290,6 +381,162 @@ const About = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="py-20 bg-white dark:bg-dark-800 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              <GradientText colors={['from-purple-500', 'to-pink-500']}>My Certifications</GradientText>
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Professional certifications that validate my expertise across different technologies.
+            </p>
+          </motion.div>
+
+          {/* Horizontal Card Layout */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {certifications.map((cert, index) => (
+                <motion.div
+                  key={cert.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group cursor-pointer"
+                >
+                  <motion.div
+                    className="relative w-full h-96 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden"
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
+                    {/* Card Content */}
+                    <div className="p-6 h-full flex flex-col">
+                      {/* Badge and Header */}
+                      <div className="flex flex-col items-center text-center mb-6">
+                        <div className="w-20 h-20 mb-4 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 p-1 shadow-lg">
+                          {cert.badge.toLowerCase().includes('.pdf') ? (
+                            <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                              <svg className="w-10 h-10 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
+                              </svg>
+                            </div>
+                          ) : (
+                            <img
+                              src={cert.badge}
+                              alt={`${cert.issuer} Badge`}
+                              className="w-full h-full rounded-full object-cover bg-white p-1"
+                              onError={(e) => {
+                                e.target.style.display = 'none';
+                                e.target.nextSibling.style.display = 'flex';
+                              }}
+                            />
+                          )}
+                          <div className="w-full h-full rounded-full bg-white hidden items-center justify-center">
+                            <Award className="w-10 h-10 text-primary-500" />
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2 leading-tight">
+                          {cert.title}
+                        </h3>
+                        
+                        <div className="flex items-center justify-center space-x-2 mb-3">
+                          <Award className="w-4 h-4 text-primary-500" />
+                          <p className="text-primary-600 dark:text-primary-400 font-semibold">
+                            {cert.issuer}
+                          </p>
+                        </div>
+                        
+                        <p className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
+                          {cert.date}
+                        </p>
+                      </div>
+
+                      {/* Description */}
+                      <div className="flex-grow mb-4">
+                        <p className="text-sm text-gray-600 dark:text-gray-300 text-center leading-relaxed">
+                          {cert.description}
+                        </p>
+                      </div>
+
+                      {/* Skills */}
+                      <div className="mb-4">
+                        <div className="flex flex-wrap gap-2 justify-center">
+                          {cert.skills.map((skill, skillIndex) => (
+                            <Tag key={skillIndex} variant="primary" size="sm">
+                              {skill}
+                            </Tag>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Credential ID and Action */}
+                      <div className="mt-auto space-y-3">
+                        <div className="text-center">
+                          <p className="text-xs text-gray-500 dark:text-gray-400">
+                            Credential ID: {cert.credentialId}
+                          </p>
+                        </div>
+                        
+                        <motion.button
+                          onClick={() => window.open(cert.verifyUrl, '_blank')}
+                          className="w-full py-2 px-4 rounded-lg text-sm font-medium transition-all duration-300 bg-gradient-to-r from-primary-500 to-accent-500 text-white hover:from-primary-600 hover:to-accent-600 shadow-md hover:shadow-lg"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          View Certificate
+                        </motion.button>
+                      </div>
+                    </div>
+
+                    {/* Hover Overlay */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    />
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
+            
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-center mt-12"
+            >
+              <div className="flex justify-center space-x-8 text-sm text-gray-600 dark:text-gray-400">
+                <div className="flex items-center space-x-2">
+                  <Award className="w-4 h-4 text-primary-500" />
+                  <span>{certifications.length} Professional Certifications</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full"></div>
+                  <span>Verified & Validated</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span>Industry Leaders</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+        
+        {/* Background decoration */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary-500/5 to-accent-500/5 rounded-full blur-3xl -z-10"></div>
       </section>
 
       {/* Fun Facts Section */}

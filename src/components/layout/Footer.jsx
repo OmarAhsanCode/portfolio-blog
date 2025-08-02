@@ -32,11 +32,11 @@ const Footer = () => {
               to="/" 
               className="text-2xl font-bold gradient-text hover:scale-105 transition-transform duration-200 inline-block"
             >
-              YourName
+              Omar Ahsan
             </Link>
             <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-md">
-              Full-stack developer passionate about creating beautiful, functional web experiences. 
-              Always learning, always building.
+              Software Developer & AI Enthusiast specializing in automation, web development, 
+              and innovative AI solutions. Passionate about building impactful technology.
             </p>
             
             {/* Social Links */}
@@ -101,7 +101,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-dark-600 flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-1 text-gray-600 dark:text-gray-400 text-sm">
-            <span>© {new Date().getFullYear()} YourName. Made with</span>
+            <span>© {new Date().getFullYear()} Omar Ahsan. Made with</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
