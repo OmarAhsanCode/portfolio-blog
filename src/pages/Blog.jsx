@@ -4,9 +4,15 @@ import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Calendar, Clock, Search, User, ArrowRight } from 'lucide-react'
 import PageTransition from '../components/ui/PageTransition'
-import Card from '../components/ui/Card'
+import Card3D from '../components/ui/Card3D'
 import Tag from '../components/ui/Tag'
 import OptimizedImage from '../components/ui/OptimizedImage'
+import { GlassCard } from '../components/ui/GlassComponents'
+import { TypewriterText, FadeInWords, GradientText, FloatingText } from '../components/ui/AnimatedText'
+import AnimatedGradientBackground from '../components/ui/AnimatedGradientBackground'
+import GeometricBackground from '../components/ui/GeometricBackground'
+import InteractiveParticles from '../components/ui/InteractiveParticles'
+import ScrollProgress from '../components/ui/ScrollProgress'
 
 // Mock blog posts data - replace with your actual blog data
 const allPosts = [
@@ -22,7 +28,7 @@ const allPosts = [
     tags: ['React', 'Performance', 'Architecture'],
     category: 'Frontend',
     featured: true,
-    image: '/api/placeholder/800/400'
+    image: 'https://picsum.photos/800/400?random=20'
   },
   {
     id: 2,
@@ -36,7 +42,7 @@ const allPosts = [
     tags: ['CSS', 'Web Design', 'Frontend'],
     category: 'Frontend',
     featured: true,
-    image: '/api/placeholder/800/400'
+    image: 'https://picsum.photos/800/400?random=21'
   },
   {
     id: 3,
@@ -50,7 +56,7 @@ const allPosts = [
     tags: ['Docker', 'DevOps', 'CI/CD'],
     category: 'DevOps',
     featured: false,
-    image: '/api/placeholder/800/400'
+    image: 'https://picsum.photos/800/400?random=22'
   },
   {
     id: 4,
@@ -64,7 +70,7 @@ const allPosts = [
     tags: ['TypeScript', 'JavaScript', 'Development'],
     category: 'Development',
     featured: false,
-    image: '/api/placeholder/800/400'
+    image: 'https://picsum.photos/800/400?random=23'
   },
   {
     id: 5,
@@ -78,7 +84,7 @@ const allPosts = [
     tags: ['Node.js', 'Express', 'API', 'Backend'],
     category: 'Backend',
     featured: false,
-    image: '/api/placeholder/800/400'
+    image: 'https://picsum.photos/800/400?random=24'
   },
   {
     id: 6,
@@ -92,7 +98,7 @@ const allPosts = [
     tags: ['Database', 'SQL', 'Backend'],
     category: 'Backend',
     featured: false,
-    image: '/api/placeholder/800/400'
+    image: 'https://picsum.photos/800/400?random=25'
   }
 ]
 
@@ -125,6 +131,11 @@ const Blog = () => {
 
   return (
     <PageTransition>
+      <ScrollProgress />
+      <AnimatedGradientBackground variant="subtle" />
+      <GeometricBackground density="low" />
+      <InteractiveParticles particleCount={20} />
+      
       <Helmet>
         <title>Blog - Your Name</title>
         <meta name="description" content="Read my latest thoughts on web development, programming, and technology. Tutorials, insights, and technical deep-dives." />
@@ -140,7 +151,7 @@ const Blog = () => {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-              My <span className="gradient-text">Blog</span>
+              <FadeInWords text="My" /> <GradientText colors={['from-green-500', 'to-cyan-600']}>Blog</GradientText>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Thoughts, tutorials, and insights from my journey in web development. 
@@ -195,15 +206,16 @@ const Blog = () => {
               viewport={{ once: true }}
               className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8"
             >
-              Featured Articles
+              <FloatingText text="Featured Articles" />
             </motion.h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {featuredPosts.map((post, index) => (
-                <Card 
+                <Card3D 
                   key={post.id} 
                   delay={index * 0.1}
                   className="overflow-hidden group"
+                  glowColor="green"
                 >
                   <Link to={`/blog/${post.slug}`}>
                     <div className="relative overflow-hidden">
@@ -254,7 +266,7 @@ const Blog = () => {
                       </div>
                     </div>
                   </Link>
-                </Card>
+                </Card3D>
               ))}
             </div>
           </div>
@@ -272,12 +284,12 @@ const Blog = () => {
               viewport={{ once: true }}
               className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8"
             >
-              All Articles
+              <TypewriterText text="All Articles" />
             </motion.h2>
 
             <div className="space-y-6">
               {regularPosts.map((post, index) => (
-                <Card 
+                <GlassCard 
                   key={post.id} 
                   delay={index * 0.05}
                   className="overflow-hidden group"
@@ -331,7 +343,7 @@ const Blog = () => {
                       </div>
                     </div>
                   </Link>
-                </Card>
+                </GlassCard>
               ))}
             </div>
           </div>

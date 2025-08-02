@@ -3,10 +3,14 @@ import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { ArrowRight, Download, Github, ExternalLink, Calendar, Clock } from 'lucide-react'
 import PageTransition from '../components/ui/PageTransition'
-import Card from '../components/ui/Card'
+import Card3D from '../components/ui/Card3D'
 import Tag from '../components/ui/Tag'
-import Button from '../components/ui/Button'
-import ParticleBackground from '../components/ui/ParticleBackground'
+import AnimatedGradientBackground from '../components/ui/AnimatedGradientBackground'
+import GeometricBackground from '../components/ui/GeometricBackground'
+import { TypewriterText, FadeInWords, GradientText, FloatingText } from '../components/ui/AnimatedText'
+import { GlassCard, GlassButton } from '../components/ui/GlassComponents'
+import InteractiveParticles from '../components/ui/InteractiveParticles'
+import ScrollProgress from '../components/ui/ScrollProgress'
 
 // Mock data - replace with your actual data
 const featuredProjects = [
@@ -14,7 +18,7 @@ const featuredProjects = [
     id: 1,
     title: 'E-Commerce Platform',
     description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB.',
-    image: '/api/placeholder/400/250',
+    image: 'https://picsum.photos/400/250?random=1',
     tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
     github: 'https://github.com/yourusername/ecommerce',
     demo: 'https://ecommerce-demo.com',
@@ -24,7 +28,7 @@ const featuredProjects = [
     id: 2,
     title: 'AI Chat Application',
     description: 'Real-time chat app with AI integration using OpenAI API.',
-    image: '/api/placeholder/400/250',
+    image: 'https://picsum.photos/400/250?random=2',
     tags: ['React', 'Socket.io', 'OpenAI', 'Express'],
     github: 'https://github.com/yourusername/ai-chat',
     demo: 'https://ai-chat-demo.com',
@@ -34,7 +38,7 @@ const featuredProjects = [
     id: 3,
     title: 'Task Management System',
     description: 'Collaborative project management tool with real-time updates.',
-    image: '/api/placeholder/400/250',
+    image: 'https://picsum.photos/400/250?random=3',
     tags: ['Vue.js', 'Firebase', 'TailwindCSS'],
     github: 'https://github.com/yourusername/task-manager',
     demo: null,
@@ -75,6 +79,8 @@ const latestPosts = [
 const Home = () => {
   return (
     <PageTransition>
+      <ScrollProgress color="purple" />
+      <GeometricBackground density="medium" interactive={true} />
       <Helmet>
         <title>Your Name - Full Stack Developer & Blogger</title>
         <meta name="description" content="Welcome to my portfolio and blog. I'm a full-stack developer passionate about creating amazing web experiences." />
@@ -82,11 +88,15 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 section-padding overflow-hidden">
-        {/* Particle Background */}
-        <ParticleBackground />
+        {/* Interactive Particles */}
+        <InteractiveParticles particleCount={30} color="purple" />
         
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 via-transparent to-accent-50/50 dark:from-primary-900/20 dark:via-transparent dark:to-accent-900/20" />
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0">
+          <AnimatedGradientBackground variant="hero">
+            <div className="w-full h-full bg-white/30 dark:bg-gray-900/30" />
+          </AnimatedGradientBackground>
+        </div>
         
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -100,16 +110,24 @@ const Home = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center px-4 py-2 bg-white/80 dark:bg-dark-800/80 backdrop-blur-sm border border-white/20 dark:border-dark-700/20 rounded-full mb-6 shadow-lg"
+                className="inline-flex items-center px-4 py-2 mb-6"
               >
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
-                <span className="text-sm text-gray-600 dark:text-gray-400">Available for freelance work</span>
+                <GlassCard className="flex items-center px-4 py-2 rounded-full">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+                  <span className="text-sm text-gray-600 dark:text-gray-400">Available for freelance work</span>
+                </GlassCard>
               </motion.div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-                <span className="block text-gray-900 dark:text-gray-100">Hi, I'm</span>
-                <span className="block gradient-text bg-gradient-to-r from-primary-600 via-accent-600 to-primary-700 bg-clip-text text-transparent">
-                  Your Name
+                <span className="block text-gray-900 dark:text-gray-100">
+                  <FadeInWords text="Hi, I'm" />
+                </span>
+                <span className="block">
+                  <GradientText 
+                    text="Your Name" 
+                    gradient="purple-pink"
+                    className="text-4xl md:text-6xl lg:text-7xl font-bold"
+                  />
                 </span>
               </h1>
               
@@ -119,8 +137,10 @@ const Home = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Full-stack developer passionate about building beautiful, functional web applications. 
-                I love turning ideas into reality through clean code and intuitive design.
+                <TypewriterText 
+                  text="Full-stack developer passionate about building beautiful, functional web applications. I love turning ideas into reality through clean code and intuitive design."
+                  speed={25}
+                />
               </motion.p>
 
               <motion.div 
@@ -129,21 +149,23 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <Button 
+                <GlassButton 
                   size="lg"
                   icon={<ArrowRight size={20} />}
                   iconPosition="right"
+                  className="bg-blue-500/20 hover:bg-blue-500/30"
                 >
                   <Link to="/projects">View My Work</Link>
-                </Button>
+                </GlassButton>
                 
-                <Button 
+                <GlassButton 
                   variant="outline"
                   size="lg"
                   icon={<Download size={20} />}
+                  className="border-white/30 hover:bg-white/10"
                 >
                   Download Resume
-                </Button>
+                </GlassButton>
               </motion.div>
             </motion.div>
 
@@ -170,7 +192,7 @@ const Home = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              Featured Projects
+              <FloatingText text="Featured Projects" />
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               A selection of my recent work showcasing different technologies and approaches.
@@ -179,7 +201,12 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
-              <Card key={project.id} delay={index * 0.1}>
+              <Card3D 
+                key={project.id} 
+                delay={index * 0.1}
+                glowColor="blue"
+                className="group"
+              >
                 <div className="relative overflow-hidden rounded-t-xl">
                   <img 
                     src={project.image} 
@@ -230,7 +257,7 @@ const Home = () => {
                     )}
                   </div>
                 </div>
-              </Card>
+              </Card3D>
             ))}
           </div>
 
@@ -242,13 +269,14 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <Link to="/projects">
-              <Button 
+              <GlassButton 
                 variant="outline"
                 icon={<ArrowRight size={18} />}
                 iconPosition="right"
+                className="border-white/30 hover:bg-white/10"
               >
                 View All Projects
-              </Button>
+              </GlassButton>
             </Link>
           </motion.div>
         </div>
@@ -265,7 +293,7 @@ const Home = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              Latest Blog Posts
+              <FloatingText text="Latest Blog Posts" />
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Thoughts, tutorials, and insights from my development journey.
@@ -274,7 +302,7 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {latestPosts.map((post, index) => (
-              <Card key={post.id} delay={index * 0.1}>
+              <GlassCard key={post.id} delay={index * 0.1}>
                 <div className="p-6">
                   <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
                     <div className="flex items-center space-x-1">
@@ -311,7 +339,7 @@ const Home = () => {
                     <ArrowRight size={16} />
                   </Link>
                 </div>
-              </Card>
+              </GlassCard>
             ))}
           </div>
 
@@ -323,13 +351,14 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <Link to="/blog">
-              <Button 
+              <GlassButton 
                 variant="outline"
                 icon={<ArrowRight size={18} />}
                 iconPosition="right"
+                className="border-white/30 hover:bg-white/10"
               >
                 View All Posts
-              </Button>
+              </GlassButton>
             </Link>
           </motion.div>
         </div>
@@ -442,11 +471,14 @@ const Home = () => {
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-bold text-white mb-6"
             >
-              Ready to Create Something
+              <FadeInWords text="Ready to Create Something" stagger={0.1} />
               <br />
-              <span className="bg-gradient-to-r from-cyan-200 to-pink-200 bg-clip-text text-transparent">
+              <GradientText 
+                colors={['from-cyan-200', 'to-pink-200']}
+                className="text-4xl md:text-6xl font-bold"
+              >
                 Extraordinary?
-              </span>
+              </GradientText>
             </motion.h2>
             
             <motion.p
@@ -469,54 +501,23 @@ const Home = () => {
               className="flex flex-col sm:flex-row items-center justify-center gap-6"
             >
               <Link to="/contact">
-                <motion.button
-                  className="group relative px-8 py-4 bg-white text-gray-900 rounded-2xl font-semibold text-lg shadow-2xl overflow-hidden"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                <GlassButton
+                  size="lg"
+                  icon={<ArrowRight size={20} />}
+                  iconPosition="right"
+                  className="bg-white/20 hover:bg-white/30 text-white border-white/30 text-lg px-8 py-4"
                 >
-                  {/* Button background effects */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-cyan-100 to-pink-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  />
-                  <motion.div
-                    className="absolute inset-0 bg-white"
-                    animate={{
-                      background: [
-                        'linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)',
-                        'linear-gradient(45deg, rgba(254,252,232,1) 0%, rgba(255,255,255,1) 100%)',
-                        'linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)'
-                      ]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  />
-                  
-                  <div className="relative flex items-center space-x-3">
-                    <span>Start a Project</span>
-                    <motion.div
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <ArrowRight size={20} />
-                    </motion.div>
-                  </div>
-                </motion.button>
+                  Start a Project
+                </GlassButton>
               </Link>
               
-              <motion.button
-                className="group relative px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-2xl font-semibold text-lg shadow-2xl hover:bg-white/20 transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+              <GlassButton
+                size="lg"
+                icon={<Calendar size={20} />}
+                className="bg-white/10 hover:bg-white/20 text-white border-white/20 text-lg px-8 py-4"
               >
-                <div className="flex items-center space-x-3">
-                  <motion.div
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                  >
-                    <Calendar size={20} />
-                  </motion.div>
-                  <span>Schedule a Call</span>
-                </div>
-              </motion.button>
+                Schedule a Call
+              </GlassButton>
             </motion.div>
 
             {/* Social proof or quick stats */}

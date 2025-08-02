@@ -20,7 +20,7 @@ const blogPosts = {
     readingTime: 8,
     tags: ['React', 'Performance', 'Architecture'],
     category: 'Frontend',
-    image: '/api/placeholder/1200/600',
+    image: 'https://picsum.photos/1200/600?random=30',
     content: `
 # Building Scalable React Applications
 
@@ -367,7 +367,7 @@ What's your experience with scaling React applications? Share your thoughts and 
     readingTime: 6,
     tags: ['CSS', 'Web Design', 'Frontend'],
     category: 'Frontend',
-    image: '/api/placeholder/1200/600',
+    image: 'https://picsum.photos/1200/600?random=31',
     content: `
 # Modern CSS Techniques for 2024
 

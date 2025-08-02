@@ -3,10 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Github, ExternalLink, Search, Filter } from 'lucide-react'
 import PageTransition from '../components/ui/PageTransition'
-import Card from '../components/ui/Card'
 import Card3D from '../components/ui/Card3D'
 import Tag from '../components/ui/Tag'
-import Button from '../components/ui/Button'
+import { GlassButton } from '../components/ui/GlassComponents'
+import { TypewriterText, FadeInWords, GradientText, FloatingText } from '../components/ui/AnimatedText'
+import AnimatedGradientBackground from '../components/ui/AnimatedGradientBackground'
+import GeometricBackground from '../components/ui/GeometricBackground'
+import InteractiveParticles from '../components/ui/InteractiveParticles'
+import ScrollProgress from '../components/ui/ScrollProgress'
 
 // Mock projects data - replace with your actual projects
 const allProjects = [
@@ -15,7 +19,7 @@ const allProjects = [
     title: 'E-Commerce Platform',
     description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, inventory management, and admin dashboard.',
     longDescription: 'This comprehensive e-commerce platform was built to handle everything from product catalog management to order processing. The frontend uses React with Redux for state management, while the backend is powered by Node.js and Express. The application includes features like real-time inventory updates, secure payment processing with Stripe, email notifications, and a comprehensive admin panel.',
-    image: '/api/placeholder/600/400',
+    image: 'https://picsum.photos/600/400?random=10',
     tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux', 'Express'],
     category: 'Full Stack',
     github: 'https://github.com/yourusername/ecommerce',
@@ -29,7 +33,7 @@ const allProjects = [
     title: 'AI Chat Application',
     description: 'Real-time chat application with AI integration using OpenAI API. Supports multiple chat rooms, file sharing, and AI-powered message suggestions.',
     longDescription: 'A modern chat application that combines real-time messaging with AI capabilities. Users can create chat rooms, share files, and get AI-powered suggestions for responses. The application uses Socket.io for real-time communication and integrates with OpenAI\'s API for intelligent features.',
-    image: '/api/placeholder/600/400',
+    image: 'https://picsum.photos/600/400?random=11',
     tags: ['React', 'Socket.io', 'OpenAI', 'Express', 'MongoDB'],
     category: 'Full Stack',
     github: 'https://github.com/yourusername/ai-chat',
@@ -43,7 +47,7 @@ const allProjects = [
     title: 'Task Management System',
     description: 'Collaborative project management tool with real-time updates, team collaboration features, and advanced reporting.',
     longDescription: 'A comprehensive task management system designed for teams. Features include project boards, task assignments, time tracking, file attachments, and real-time collaboration. The application provides detailed analytics and reporting to help teams track productivity and project progress.',
-    image: '/api/placeholder/600/400',
+    image: 'https://picsum.photos/600/400?random=12',
     tags: ['Vue.js', 'Firebase', 'TailwindCSS', 'Chart.js'],
     category: 'Frontend',
     github: 'https://github.com/yourusername/task-manager',
@@ -57,7 +61,7 @@ const allProjects = [
     title: 'Weather Dashboard',
     description: 'Beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.',
     longDescription: 'A comprehensive weather dashboard that provides detailed weather information with beautiful visualizations. The app includes features like location-based forecasts, weather maps, historical data, and customizable widgets.',
-    image: '/api/placeholder/600/400',
+    image: 'https://picsum.photos/600/400?random=13',
     tags: ['React', 'TypeScript', 'Chart.js', 'Weather API'],
     category: 'Frontend',
     github: 'https://github.com/yourusername/weather-dashboard',
@@ -71,7 +75,7 @@ const allProjects = [
     title: 'Blog CMS API',
     description: 'RESTful API for a content management system with authentication, role-based permissions, and media handling.',
     longDescription: 'A robust CMS API built with Node.js and Express. Features include user authentication with JWT, role-based access control, content versioning, media upload handling, and comprehensive API documentation with Swagger.',
-    image: '/api/placeholder/600/400',
+    image: 'https://picsum.photos/600/400?random=14',
     tags: ['Node.js', 'Express', 'PostgreSQL', 'JWT', 'Swagger'],
     category: 'Backend',
     github: 'https://github.com/yourusername/blog-cms-api',
@@ -85,7 +89,7 @@ const allProjects = [
     title: 'Portfolio Website',
     description: 'This very website! Built with React, TailwindCSS, and Framer Motion for smooth animations.',
     longDescription: 'A modern portfolio and blog website built with React and TailwindCSS. Features include dark/light mode, smooth animations with Framer Motion, MDX blog support, and responsive design. The site is optimized for performance and SEO.',
-    image: '/api/placeholder/600/400',
+    image: 'https://picsum.photos/600/400?random=15',
     tags: ['React', 'TailwindCSS', 'Framer Motion', 'MDX', 'Vite'],
     category: 'Frontend',
     github: 'https://github.com/yourusername/portfolio',
@@ -118,6 +122,11 @@ const Projects = () => {
 
   return (
     <PageTransition>
+      <ScrollProgress />
+      <AnimatedGradientBackground variant="subtle" />
+      <GeometricBackground density="medium" />
+      <InteractiveParticles particleCount={30} />
+      
       <Helmet>
         <title>Projects - Your Name</title>
         <meta name="description" content="Explore my portfolio of web development projects, including full-stack applications, frontend interfaces, and backend systems." />
@@ -133,7 +142,7 @@ const Projects = () => {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-              My <span className="gradient-text">Projects</span>
+              <FadeInWords text="My" /> <GradientText colors={['from-purple-500', 'to-blue-600']}>Projects</GradientText>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               A collection of projects showcasing my skills in web development, 
@@ -192,7 +201,7 @@ const Projects = () => {
               viewport={{ once: true }}
               className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8"
             >
-              Featured Projects
+              <FloatingText text="Featured Projects" />
             </motion.h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -279,16 +288,17 @@ const Projects = () => {
               viewport={{ once: true }}
               className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8"
             >
-              All Projects
+              <TypewriterText text="All Projects" />
             </motion.h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherProjects.map((project, index) => (
-                <Card 
+                <Card3D 
                   key={project.id} 
                   delay={index * 0.05}
                   className="overflow-hidden"
                   onClick={() => setSelectedProject(project)}
+                  glowColor="cyan"
                 >
                   <div className="relative overflow-hidden">
                     <img 
@@ -346,7 +356,7 @@ const Projects = () => {
                       <span className="text-xs text-gray-500 dark:text-gray-400">{project.year}</span>
                     </div>
                   </div>
-                </Card>
+                </Card3D>
               ))}
             </div>
           </div>
@@ -361,16 +371,16 @@ const Projects = () => {
               <p className="text-gray-600 dark:text-gray-400 text-lg">
                 No projects found matching your criteria.
               </p>
-              <Button 
+              <GlassButton 
                 onClick={() => {
                   setSelectedCategory('All')
                   setSearchTerm('')
                 }}
-                className="mt-4"
+                className="mt-4 bg-gray-500/20 hover:bg-gray-500/30 border-gray-500/30"
                 variant="outline"
               >
                 Clear Filters
-              </Button>
+              </GlassButton>
             </div>
           </div>
         </section>

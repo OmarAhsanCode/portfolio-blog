@@ -2,9 +2,14 @@ import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Download, MapPin, Calendar, Coffee, Code, Heart, Award, Users } from 'lucide-react'
 import PageTransition from '../components/ui/PageTransition'
-import Card from '../components/ui/Card'
+import Card3D from '../components/ui/Card3D'
 import Tag from '../components/ui/Tag'
-import Button from '../components/ui/Button'
+import { GlassCard, GlassButton } from '../components/ui/GlassComponents'
+import { TypewriterText, FadeInWords, GradientText, FloatingText } from '../components/ui/AnimatedText'
+import AnimatedGradientBackground from '../components/ui/AnimatedGradientBackground'
+import GeometricBackground from '../components/ui/GeometricBackground'
+import InteractiveParticles from '../components/ui/InteractiveParticles'
+import ScrollProgress from '../components/ui/ScrollProgress'
 
 const skills = [
   { category: 'Frontend', items: ['React', 'Vue.js', 'TypeScript', 'TailwindCSS', 'Next.js'] },
@@ -61,6 +66,11 @@ const funFacts = [
 const About = () => {
   return (
     <PageTransition>
+      <ScrollProgress />
+      <AnimatedGradientBackground variant="subtle" />
+      <GeometricBackground density="low" />
+      <InteractiveParticles particleCount={25} />
+      
       <Helmet>
         <title>About - Your Name</title>
         <meta name="description" content="Learn more about me, my journey, skills, and what drives my passion for development." />
@@ -76,7 +86,7 @@ const About = () => {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-                About <span className="gradient-text">Me</span>
+                <FadeInWords text="About" /> <GradientText colors={['from-blue-500', 'to-purple-600']}>Me</GradientText>
               </h1>
               
               <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -105,12 +115,13 @@ const About = () => {
                 </div>
               </div>
 
-              <Button 
+              <GlassButton 
                 icon={<Download size={18} />}
                 size="lg"
+                className="bg-blue-500/20 hover:bg-blue-500/30 border-blue-500/30"
               >
                 Download Resume
-              </Button>
+              </GlassButton>
             </motion.div>
 
             <motion.div
@@ -122,7 +133,7 @@ const About = () => {
               <div className="relative">
                 <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white dark:border-dark-800 shadow-2xl">
                   <img 
-                    src="/api/placeholder/320/320" 
+                    src="https://picsum.photos/320/320?random=40" 
                     alt="Your Name"
                     className="w-full h-full object-cover"
                   />
@@ -182,7 +193,7 @@ const About = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              Skills & Technologies
+              <FloatingText text="Skills & Technologies" />
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Here are some of the technologies I work with on a regular basis.
@@ -191,7 +202,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {skills.map((skillGroup, index) => (
-              <Card key={skillGroup.category} delay={index * 0.1}>
+              <Card3D key={skillGroup.category} delay={index * 0.1} glowColor="purple">
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
                     {skillGroup.category}
@@ -204,7 +215,7 @@ const About = () => {
                     ))}
                   </div>
                 </div>
-              </Card>
+              </Card3D>
             ))}
           </div>
         </div>
@@ -221,7 +232,7 @@ const About = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              My Journey
+              <GradientText colors={['from-green-500', 'to-blue-500']}>My Journey</GradientText>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Key milestones in my professional and educational journey.
@@ -253,7 +264,7 @@ const About = () => {
                   
                   {/* Content */}
                   <div className="flex-grow">
-                    <Card className="p-6">
+                    <GlassCard className="p-6">
                       <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-1">
                         {item.title}
                       </h3>
@@ -263,7 +274,7 @@ const About = () => {
                       <p className="text-gray-600 dark:text-gray-400">
                         {item.description}
                       </p>
-                    </Card>
+                    </GlassCard>
                   </div>
                 </motion.div>
               ))}
@@ -283,7 +294,7 @@ const About = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              Fun Facts About Me
+              <TypewriterText text="Fun Facts About Me" />
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Because life isn't just about code (though I do love it).

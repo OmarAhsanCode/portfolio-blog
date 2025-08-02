@@ -7,7 +7,6 @@ import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import ScrollToTop from './components/ui/ScrollToTop'
 import LoadingSpinner from './components/ui/LoadingSpinner'
-import CustomCursor from './components/ui/CustomCursor'
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
@@ -41,7 +40,6 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider>
         <div className="min-h-screen flex flex-col bg-white dark:bg-dark-900 transition-colors duration-300">
-          <CustomCursor />
           <Navbar />
           
           <main className="flex-grow">

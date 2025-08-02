@@ -5,23 +5,29 @@ import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, Calendar, Message
 import PageTransition from '../components/ui/PageTransition'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
+import { GlassCard } from '../components/ui/GlassComponents'
+import { FadeInWords, GradientText, FloatingText } from '../components/ui/AnimatedText'
+import AnimatedGradientBackground from '../components/ui/AnimatedGradientBackground'
+import GeometricBackground from '../components/ui/GeometricBackground'
+import InteractiveParticles from '../components/ui/InteractiveParticles'
+import ScrollProgress from '../components/ui/ScrollProgress'
 
 const socialLinks = [
   {
     name: 'GitHub',
-    url: 'https://github.com/yourusername',
+    url: 'https://github.com/OmarAhsanCode',
     icon: Github,
     color: 'hover:text-gray-900 dark:hover:text-white'
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/yourusername',
+    url: 'https://linkedin.com/in/omarahsan360',
     icon: Linkedin,
     color: 'hover:text-blue-600'
   },
   {
     name: 'Twitter',
-    url: 'https://twitter.com/yourusername',
+    url: 'https://x.com/omarahsan_',
     icon: Twitter,
     color: 'hover:text-blue-400'
   }
@@ -106,6 +112,11 @@ const Contact = () => {
 
   return (
     <PageTransition>
+      <ScrollProgress />
+      <AnimatedGradientBackground variant="hero" />
+      <GeometricBackground density="medium" />
+      <InteractiveParticles particleCount={25} />
+      
       <Helmet>
         <title>Contact - Your Name</title>
         <meta name="description" content="Get in touch with me for collaboration, project inquiries, or just to say hello. I'd love to hear from you!" />
@@ -121,7 +132,7 @@ const Contact = () => {
             className="text-center mb-16"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-              Let's <span className="gradient-text">Connect</span>
+              <FadeInWords text="Let's" /> <GradientText colors={['from-pink-500', 'to-orange-600']}>Connect</GradientText>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Have a project in mind? Want to collaborate? Or just want to say hello? 
@@ -136,9 +147,9 @@ const Contact = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Card className="p-8">
+              <GlassCard className="p-8">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-                  Send me a message
+                  <FloatingText text="Send me a message" />
                 </h2>
 
                 {formStatus === 'success' && (
@@ -254,7 +265,7 @@ const Contact = () => {
                     {formStatus === 'loading' ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
-              </Card>
+              </GlassCard>
             </motion.div>
 
             {/* Contact Information */}
