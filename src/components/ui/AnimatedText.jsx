@@ -142,7 +142,7 @@ export const FloatingText = ({ text, children, className = '' }) => {
   )
 }
 
-export const GradientText = ({ text, className = '', gradient = 'blue-purple' }) => {
+export const GradientText = ({ text, children, colors, className = '', gradient = 'blue-purple' }) => {
   const gradients = {
     'blue-purple': 'bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600',
     'pink-orange': 'bg-gradient-to-r from-pink-500 via-red-500 to-orange-500',
@@ -150,9 +150,17 @@ export const GradientText = ({ text, className = '', gradient = 'blue-purple' })
     'purple-pink': 'bg-gradient-to-r from-purple-600 via-pink-600 to-red-500'
   }
 
+  // Support custom colors array if provided
+  let gradientClass = gradients[gradient]
+  if (colors && colors.length >= 2) {
+    gradientClass = `bg-gradient-to-r ${colors[0]} ${colors[1]}`
+  }
+
+  const content = text || children
+
   return (
     <motion.span
-      className={`${gradients[gradient]} bg-clip-text text-transparent ${className}`}
+      className={`${gradientClass} bg-clip-text text-transparent ${className}`}
       animate={{
         backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
       }}
@@ -165,7 +173,7 @@ export const GradientText = ({ text, className = '', gradient = 'blue-purple' })
         backgroundSize: '200% 100%'
       }}
     >
-      {text}
+      {content}
     </motion.span>
   )
 }

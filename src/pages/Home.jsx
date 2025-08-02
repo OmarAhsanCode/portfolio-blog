@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { ArrowRight, Download, Github, ExternalLink, Calendar, Clock } from 'lucide-react'
+import { ArrowRight, Download, Github, ExternalLink, Calendar } from 'lucide-react'
 import PageTransition from '../components/ui/PageTransition'
 import Card3D from '../components/ui/Card3D'
 import Tag from '../components/ui/Tag'
@@ -43,36 +43,6 @@ const featuredProjects = [
     github: 'https://github.com/OmarAhsanCode/portfolio-blog',
     demo: null,
     status: 'completed'
-  }
-]
-
-const latestPosts = [
-  {
-    id: 1,
-    title: 'Building AI Agents with NEAT',
-    excerpt: 'Exploring how to train neural networks to evolve and play games using the NEAT algorithm.',
-    slug: 'building-ai-agents-neat',
-    date: '2024-12-15',
-    readingTime: 8,
-    tags: ['AI', 'NEAT', 'Machine Learning']
-  },
-  {
-    id: 2,
-    title: 'Automating Web Scraping with Python',
-    excerpt: 'Learn how to build intelligent web scrapers that can adapt to different website structures.',
-    slug: 'automating-web-scraping-python',
-    date: '2024-11-20',
-    readingTime: 6,
-    tags: ['Python', 'Web Scraping', 'Automation']
-  },
-  {
-    id: 3,
-    title: 'Modern Portfolio Development with React',
-    excerpt: 'A complete guide to building a responsive portfolio website using React and TailwindCSS.',
-    slug: 'modern-portfolio-development-react',
-    date: '2024-10-10',
-    readingTime: 12,
-    tags: ['React', 'TailwindCSS', 'Web Development']
   }
 ]
 
@@ -289,7 +259,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Latest Blog Posts Section */}
+      {/* Blog Coming Soon Section */}
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
@@ -297,76 +267,38 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              <FloatingText text="Latest Blog Posts" />
+              <FloatingText text="Blog" />
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Thoughts, tutorials, and insights from my development journey.
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+              I'm working on some exciting blog posts about AI, automation, and web development.
             </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {latestPosts.map((post, index) => (
-              <GlassCard key={post.id} delay={index * 0.1}>
-                <div className="p-6">
-                  <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
-                    <div className="flex items-center space-x-1">
-                      <Calendar size={14} />
-                      <span>{new Date(post.date).toLocaleDateString()}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Clock size={14} />
-                      <span>{post.readingTime} min read</span>
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">
-                    <Link to={`/blog/${post.slug}`}>
-                      {post.title}
-                    </Link>
-                  </h3>
-                  
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    {post.excerpt}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.map((tag) => (
-                      <Tag key={tag} variant="default" size="sm">{tag}</Tag>
-                    ))}
-                  </div>
-                  
-                  <Link 
-                    to={`/blog/${post.slug}`}
-                    className="inline-flex items-center space-x-1 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors duration-200"
-                  >
-                    <span>Read more</span>
-                    <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </GlassCard>
-            ))}
-          </div>
-
-          <motion.div 
-            className="text-center mt-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <Link to="/blog">
-              <GlassButton 
-                variant="outline"
-                icon={<ArrowRight size={18} />}
-                iconPosition="right"
-                className="border-white/30 hover:bg-white/10"
-              >
-                View All Posts
-              </GlassButton>
-            </Link>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-blue-500/30 rounded-full"
+            >
+              <motion.div
+                animate={{ 
+                  opacity: [1, 0.5, 1],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="w-2 h-2 bg-blue-500 rounded-full mr-3"
+              />
+              <span className="text-gray-700 dark:text-gray-300 font-medium">
+                Coming Soon...
+              </span>
+            </motion.div>
           </motion.div>
         </div>
       </section>
