@@ -200,9 +200,9 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {skills.map((skillGroup, index) => (
-              <Card3D key={skillGroup.category} delay={index * 0.1} glowColor="purple">
+              <Card3D key={skillGroup.category} delay={index * 0.1} glowColor="purple" className="mb-4">
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
                     {skillGroup.category}

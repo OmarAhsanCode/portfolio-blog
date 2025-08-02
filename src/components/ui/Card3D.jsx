@@ -54,37 +54,38 @@ const Card3D = ({ children, className = '', intensity = 0.3, glowColor = 'blue',
         transformStyle: 'preserve-3d',
       }}
       animate={{
-        scale: isHovered ? 1.05 : 1,
+        scale: isHovered ? 1.02 : 1,
+        zIndex: isHovered ? 10 : 1,
       }}
       transition={{
         type: 'spring',
         stiffness: 300,
         damping: 30,
       }}
-      className={`relative transform-gpu group ${className}`}
+      className={`relative transform-gpu group isolate ${className}`}
       {...props}
     >
       {/* Enhanced Glow effect */}
       <motion.div
-        className={`absolute -inset-2 bg-gradient-to-r ${glowColors[glowColor] || glowColors.blue} rounded-xl blur-xl`}
+        className={`absolute -inset-1 bg-gradient-to-r ${glowColors[glowColor] || glowColors.blue} rounded-xl blur-lg pointer-events-none`}
         style={{
           transform: 'translateZ(-20px)',
         }}
         animate={{
-          opacity: isHovered ? 0.8 : 0,
-          scale: isHovered ? 1.1 : 0.95,
+          opacity: isHovered ? 0.6 : 0,
+          scale: isHovered ? 1.05 : 0.95,
         }}
         transition={{ duration: 0.3 }}
       />
       
       {/* Secondary glow */}
       <motion.div
-        className={`absolute -inset-1 bg-gradient-to-r ${glowColors[glowColor] || glowColors.blue} rounded-xl blur-md`}
+        className={`absolute -inset-0.5 bg-gradient-to-r ${glowColors[glowColor] || glowColors.blue} rounded-xl blur-md pointer-events-none`}
         style={{
           transform: 'translateZ(-10px)',
         }}
         animate={{
-          opacity: isHovered ? 0.6 : 0,
+          opacity: isHovered ? 0.4 : 0,
         }}
         transition={{ duration: 0.3 }}
       />

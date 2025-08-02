@@ -209,15 +209,14 @@ const Blog = () => {
               <FloatingText text="Featured Articles" />
             </motion.h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               {featuredPosts.map((post, index) => (
-                <Card3D 
-                  key={post.id} 
-                  delay={index * 0.1}
-                  className="overflow-hidden group"
-                  glowColor="green"
-                >
-                  <Link to={`/blog/${post.slug}`}>
+                <Link key={post.id} to={`/blog/${post.slug}`} className="block">
+                  <Card3D 
+                    delay={index * 0.1}
+                    className="overflow-hidden group mb-4 cursor-pointer"
+                    glowColor="green"
+                  >
                     <div className="relative overflow-hidden">
                       <OptimizedImage 
                         src={post.image} 
@@ -265,8 +264,8 @@ const Blog = () => {
                         <Tag variant="accent" size="sm">{post.category}</Tag>
                       </div>
                     </div>
-                  </Link>
-                </Card3D>
+                  </Card3D>
+                </Link>
               ))}
             </div>
           </div>
@@ -289,12 +288,11 @@ const Blog = () => {
 
             <div className="space-y-6">
               {regularPosts.map((post, index) => (
-                <GlassCard 
-                  key={post.id} 
-                  delay={index * 0.05}
-                  className="overflow-hidden group"
-                >
-                  <Link to={`/blog/${post.slug}`}>
+                <Link key={post.id} to={`/blog/${post.slug}`} className="block">
+                  <GlassCard 
+                    delay={index * 0.05}
+                    className="overflow-hidden group cursor-pointer"
+                  >
                     <div className="flex flex-col md:flex-row">
                       <div className="md:w-1/3 relative overflow-hidden">
                         <OptimizedImage 
@@ -342,8 +340,8 @@ const Blog = () => {
                         </div>
                       </div>
                     </div>
-                  </Link>
-                </GlassCard>
+                  </GlassCard>
+                </Link>
               ))}
             </div>
           </div>

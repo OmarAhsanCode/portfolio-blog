@@ -2,8 +2,8 @@ import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Github, ExternalLink, Search, Filter } from 'lucide-react'
-import PageTransition from '../components/ui/PageTransition'
 import Card3D from '../components/ui/Card3D'
+import PageTransition from '../components/ui/PageTransition'
 import Tag from '../components/ui/Tag'
 import { GlassButton } from '../components/ui/GlassComponents'
 import { TypewriterText, FadeInWords, GradientText, FloatingText } from '../components/ui/AnimatedText'
@@ -204,7 +204,7 @@ const Projects = () => {
               <FloatingText text="Featured Projects" />
             </motion.h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {featuredProjects.map((project) => (
                 <Card3D 
                   key={project.id} 
